@@ -47,12 +47,6 @@
 
     </form>
 
-    <div style="background-color: #eee; margin-top: 20px; padding: 15px; border-radius: 5px;">
-        <h4>Debug State:</h4>
-        <pre>Formulário Válido: <strong>{{ feedbackForm.valid }}</strong></pre>
-        <pre>Valores: {{ feedbackForm.value | json }}</pre>
-    </div>
-
     <div *ngIf="formSubmitted" class="success-message">
         <h2>Obrigado!</h2>
         <p>Seu feedback foi enviado com sucesso.</p>

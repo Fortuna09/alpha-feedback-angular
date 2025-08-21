@@ -1,17 +1,15 @@
+// Em feedback-form.scss
+
+// :host é um seletor especial que estiliza o próprio elemento do componente (<app-feedback-form>)
 :host {
-  display: flex;
-  justify-content: center;
-  padding: 40px;
+  display: block; // Faz o componente se comportar como um bloco (div)
+  width: 100%;
   font-family: sans-serif;
 }
 
+// Não precisamos mais de um container com background ou sombra, pois o pai já faz isso.
 .form-container {
   width: 100%;
-  max-width: 500px;
-  padding: 30px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -37,7 +35,7 @@ textarea {
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box;
+  box-sizing: border-box; 
   font-size: 16px;
 }
 
@@ -64,6 +62,7 @@ button {
   }
 }
 
+// O resto dos estilos de rating e erro continuam os mesmos
 .rating-container {
   display: flex;
   gap: 10px;
@@ -85,7 +84,7 @@ button {
 }
 
 .error-message {
-  color: #dc3545; /* Vermelho */
+  color: #dc3545;
   font-size: 12px;
   margin-top: 5px;
 }
