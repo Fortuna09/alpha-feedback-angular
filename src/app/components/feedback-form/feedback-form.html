@@ -1,0 +1,42 @@
+<div class="form-container">
+
+    <form *ngIf="!formSubmitted" class="feedback-form" [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+
+        <h2>Deixe seu Feedback</h2>
+
+        <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" id="name" formControlName="name">
+        </div>
+
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" formControlName="email">
+        </div>
+
+        <div class="form-group">
+            <label>Nota</label>
+            <div class="rating-container">
+                <span *ngFor="let star of stars" class="star" (click)="rate(star)"
+                    [class.selected]="star <= (feedbackForm.get('rating')?.value || 0)">
+                    &#9733;
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="comment">Comentário</label>
+            <textarea id="comment" rows="4" formControlName="message"></textarea>
+        </div>
+
+        <button type="submit" [disabled]="feedbackForm.invalid">Enviar Feedback</button>
+
+    </form>
+
+    <div *ngIf="formSubmitted" class="success-message">
+        <h2>Obrigado!</h2>
+        <p>Seu feedback foi enviado com sucesso.</p>
+        <button (click)="resetForm()">Enviar outro feedback</button>
+    </div>
+
+</div>
