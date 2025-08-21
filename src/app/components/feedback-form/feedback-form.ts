@@ -22,10 +22,14 @@ export class FeedbackForm {
 
   //formulário de feedback - inicialização
   feedbackForm: FormGroup = this.fb.group({
-    name: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
-    rating: [null, [Validators.required, Validators.min(1), Validators.max(5)]],
-    message: ['', Validators.required]
+    name: ['', [Validators.required, Validators.minLength(3)]],
+    email: ['', [
+      Validators.required, 
+      Validators.email,
+      Validators.pattern(/.+\@.+\..+/)
+    ]],
+    rating: [null, Validators.required],
+    message: ['', [Validators.required, Validators.minLength(10)]]
   });
 
   stars = [1, 2, 3, 4, 5];
@@ -47,7 +51,7 @@ export class FeedbackForm {
         .subscribe({
           next: (response) => {
             console.log('Feedback enviado com sucesso!', response);
-            this.formSubmitted = true; 
+            this.formSubmitted = true;
           },
           error: (err) => {
             console.error('Falha ao enviar feedback:', err);

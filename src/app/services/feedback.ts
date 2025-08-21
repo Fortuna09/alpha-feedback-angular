@@ -16,7 +16,7 @@ export interface Feedback {
 export class FeedbackService {
   private http = inject(HttpClient);
 
-  private apiUrl = 'https://alpha-feedback-api.onrender.com/api/feedbacks';
+  private apiUrl = 'https://alpha-pbuc.onrender.com/api/feedbacks';
 
   constructor() { }
 

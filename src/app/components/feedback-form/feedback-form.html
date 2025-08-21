@@ -7,11 +7,19 @@
         <div class="form-group">
             <label for="name">Nome</label>
             <input type="text" id="name" formControlName="name">
+            <div *ngIf="feedbackForm.get('name')?.invalid && feedbackForm.get('name')?.touched" class="error-message">
+                <small *ngIf="feedbackForm.get('name')?.hasError('required')">O nome é obrigatório.</small>
+                <small *ngIf="feedbackForm.get('name')?.hasError('minlength')">O nome precisa ter no mínimo 3
+                    caracteres.</small>
+            </div>
         </div>
 
         <div class="form-group">
             <label for="email">E-mail</label>
             <input type="email" id="email" formControlName="email">
+            <div *ngIf="feedbackForm.get('email')?.invalid && feedbackForm.get('email')?.touched" class="error-message">
+                <small>Por favor, insira um e-mail válido.</small>
+            </div>
         </div>
 
         <div class="form-group">
@@ -27,11 +35,23 @@
         <div class="form-group">
             <label for="comment">Comentário</label>
             <textarea id="comment" rows="4" formControlName="message"></textarea>
+            <div *ngIf="feedbackForm.get('message')?.invalid && feedbackForm.get('message')?.touched"
+                class="error-message">
+                <small *ngIf="feedbackForm.get('message')?.hasError('required')">O comentário é obrigatório.</small>
+                <small *ngIf="feedbackForm.get('message')?.hasError('minlength')">O comentário precisa ter no mínimo 10
+                    caracteres.</small>
+            </div>
         </div>
 
         <button type="submit" [disabled]="feedbackForm.invalid">Enviar Feedback</button>
 
     </form>
+
+    <div style="background-color: #eee; margin-top: 20px; padding: 15px; border-radius: 5px;">
+        <h4>Debug State:</h4>
+        <pre>Formulário Válido: <strong>{{ feedbackForm.valid }}</strong></pre>
+        <pre>Valores: {{ feedbackForm.value | json }}</pre>
+    </div>
 
     <div *ngIf="formSubmitted" class="success-message">
         <h2>Obrigado!</h2>
