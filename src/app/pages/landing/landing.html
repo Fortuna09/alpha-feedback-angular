@@ -1,6 +1,7 @@
-<app-hero (feedbackClick)="openFeedbackForm()"></app-hero>
 <app-tech-stack></app-tech-stack>
 <app-angular-section></app-angular-section>
+<app-hero (feedbackClick)="openFeedbackForm()"></app-hero>
+
 
 <div *ngIf="isFormVisible" class="modal-overlay" (click)="closeFeedbackForm()">
   <div class="modal-content" (click)="$event.stopPropagation()">
