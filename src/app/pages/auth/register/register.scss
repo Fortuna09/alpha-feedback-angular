@@ -1,21 +1,30 @@
-:host {
-  display: block;
-  width: 100%;
-  font-family: sans-serif;
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  min-height: calc(100vh - 120px);
+  background-color: #f4f7f6;
 }
 
-.form-container {
+.form-wrapper {
   width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
 h2 {
-  text-align: center;
   margin-bottom: 25px;
   color: #333;
 }
 
 .form-group {
   margin-bottom: 20px;
+  text-align: left;
 }
 
 label {
@@ -25,13 +34,12 @@ label {
   color: #555;
 }
 
-input,
-textarea {
+input {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   font-size: 16px;
 }
 
@@ -53,34 +61,6 @@ button {
 
   &:disabled {
     background-color: #ccc;
-    color: #666;
     cursor: not-allowed;
   }
-}
-
-// O resto dos estilos de rating e erro continuam os mesmos
-.rating-container {
-  display: flex;
-  gap: 10px;
-  font-size: 30px;
-}
-
-.star {
-  color: #ccc;
-  cursor: pointer;
-  transition: color 0.2s ease-in-out;
-
-  &:hover {
-    color: #ffc107;
-  }
-}
-
-.star.selected {
-  color: #009037;
-}
-
-.error-message {
-  color: #dc3545;
-  font-size: 12px;
-  margin-top: 5px;
 }

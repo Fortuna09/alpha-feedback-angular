@@ -4,10 +4,13 @@ import { Observable } from 'rxjs';
 
 //interface
 export interface Feedback {
+  _id: string;
   name: string;
   email: string;
   rating: number;
   message: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 @Injectable({
@@ -22,5 +25,10 @@ export class FeedbackService {
 
   submitFeedback(feedbackData: Feedback): Observable<any> {
     return this.http.post(this.apiUrl, feedbackData);
+  }
+
+  // Busca todos os feedbacks
+  getFeedbacks(): Observable<Feedback[]> {
+    return this.http.get<Feedback[]>(this.apiUrl);
   }
 }

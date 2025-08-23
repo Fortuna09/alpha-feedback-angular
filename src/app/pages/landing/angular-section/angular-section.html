@@ -1,0 +1,69 @@
+<section class="section-container">
+    <h2>O Frontend: Uma Arquitetura Robusta com Angular</h2>
+    <p class="section-intro">
+        A decisão de reconstruir este projeto em Angular foi estratégica, visando criar uma aplicação mais organizada,
+        escalável e fácil de manter. Abaixo detalho os principais conceitos e ferramentas do framework que foram
+        aplicados.
+    </p>
+
+    <div class="features-grid">
+        <div class="feature-card">
+            <h3>Arquitetura Baseada em Componentes</h3>
+            <p>
+                A interface foi desenvolvida seguindo o paradigma de componentização do Angular. Cada elemento
+                visual—desde o <span class="tech-term">Topbar</span> e <span class="tech-term">Footer</span> até o <span
+                    class="tech-term">FeedbackForm</span> e a seção <span class="tech-term">Hero</span>—foi encapsulado
+                em seu próprio Componente Standalone. Essa abordagem modular não só organiza o código de forma limpa,
+                mas também promove a reutilização e facilita a manutenção, permitindo que cada 'peça' da UI tenha sua
+                própria lógica, template e estilo de forma isolada.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Reactive Forms (Formulários Reativos)</h3>
+            <p>
+                Para a captura de dados, optei pela abordagem de Reactive Forms por oferecer um controle mais explícito
+                e robusto sobre o estado e a validação. A estrutura do formulário foi definida programaticamente no
+                TypeScript usando <span class="tech-term">FormBuilder</span>, <span class="tech-term">FormGroup</span> e
+                <span class="tech-term">FormControl</span>. Isso permitiu a implementação de validação síncrona com as
+                regras do backend (como <span class="tech-term">minLength</span> e <span
+                    class="tech-term">pattern</span> para Regex), garantindo uma experiência de usuário fluida com
+                feedback instantâneo e desabilitando o botão de envio até que o estado do formulário seja válido. </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Serviços e Injeção de Dependência</h3>
+            <p>
+                Seguindo o princípio de Separação de Responsabilidades, a lógica de comunicação com a API foi totalmente
+                abstraída em um <span class="tech-term">FeedbackService</span>. O componente do formulário não sabe como
+                fazer uma chamada HTTP; ele apenas delega essa tarefa ao serviço. O Angular, através de seu poderoso
+                sistema de Injeção de Dependência (DI), forneceu as instâncias do <span
+                    class="tech-term">HttpClient</span> e do <span class="tech-term">FeedbackService</span> onde foram
+                necessárias. O serviço retorna um <span class="tech-term">Observable</span> (RxJS), permitindo que o
+                componente reaja de forma assíncrona à resposta da API.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Roteamento e Componentes Standalone</h3>
+            <p>
+                A aplicação foi construída utilizando a arquitetura de Componentes Standalone, a abordagem moderna do
+                Angular que elimina a necessidade de <span class="tech-term">NgModules</span> para projetos mais
+                simples. Isso resulta em um código mais explícito, onde cada componente declara suas próprias
+                dependências no array de <span class="tech-term">imports</span>, otimizando o processo de tree-shaking.
+                O roteamento foi configurado de forma centralizada em <span class="tech-term">app.routes.ts</span>,
+                direcionando o tráfego para os componentes de página através da diretiva <span
+                    class="tech-term">router-outlet</span>. </p>
+        </div>
+
+        <div class="feature-card challenge-card">
+            <h3>Desafios e Soluções na Prática</h3>
+            <p>
+                Um dos maiores desafios iniciais foi a depuração de erros de <span class="tech-term">Component not found</span>. A causa raiz era uma sutil inconsistência na convenção de nomes entre os arquivos gerados pelo Angular CLI (ex: <span class="tech-term">feedback-form.ts</span>) e as classes exportadas (ex: <span class="tech-term">export class FeedbackForm</span>). A solução foi um processo metódico de verificação do código-fonte e a criação de uma regra mental: o nome da classe no import deve ser o espelho exato do export class no arquivo de origem, solidificando um conceito-chave dos Componentes Standalone.
+            </p>
+            <p>
+                Outro desafio prático foi a renderização de assets (ícones SVG), que resultava em erros <span class="tech-term">404 Not Found</span>. A investigação revelou um erro comum: a confusão entre caminhos de sistema de arquivos (ex: <span class="tech-term">src/assets/...</span>), que usamos no desenvolvimento, e caminhos de URL públicos (ex: <span class="tech-term">/assets/...</span>), que o navegador entende. A correção no atributo <span class="tech-term">src</span> das tags <span class="tech-term"> img</span> foi simples, mas fundamental para entender como o Angular CLI serve arquivos estáticos.
+            </p>
+        </div>
+    </div>
+</section>

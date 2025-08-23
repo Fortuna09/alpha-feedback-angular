@@ -1,8 +1,6 @@
-<main class="landing-container">
-  <h1>Bem-vindo ao Alpha Feedback</h1>
-  <p>Sua opinião é importante para nós. Ajude-nos a melhorar.</p>
-  <button class="cta-button" (click)="openFeedbackForm()">Deixar um Feedback</button>
-</main>
+<app-hero (feedbackClick)="openFeedbackForm()"></app-hero>
+<app-tech-stack></app-tech-stack>
+<app-angular-section></app-angular-section>
 
 <div *ngIf="isFormVisible" class="modal-overlay" (click)="closeFeedbackForm()">
   <div class="modal-content" (click)="$event.stopPropagation()">
