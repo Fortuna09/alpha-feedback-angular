@@ -9,7 +9,7 @@ import { FeedbackForm } from './components/feedback-form/feedback-form';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TopbarComponent, Footer, FeedbackForm],
+  imports: [RouterOutlet, TopbarComponent, Footer],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

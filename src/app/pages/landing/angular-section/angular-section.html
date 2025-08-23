@@ -55,15 +55,5 @@
                 direcionando o tráfego para os componentes de página através da diretiva <span
                     class="tech-term">router-outlet</span>. </p>
         </div>
-
-        <div class="feature-card challenge-card">
-            <h3>Desafios e Soluções na Prática</h3>
-            <p>
-                Um dos maiores desafios iniciais foi a depuração de erros de <span class="tech-term">Component not found</span>. A causa raiz era uma sutil inconsistência na convenção de nomes entre os arquivos gerados pelo Angular CLI (ex: <span class="tech-term">feedback-form.ts</span>) e as classes exportadas (ex: <span class="tech-term">export class FeedbackForm</span>). A solução foi um processo metódico de verificação do código-fonte e a criação de uma regra mental: o nome da classe no import deve ser o espelho exato do export class no arquivo de origem, solidificando um conceito-chave dos Componentes Standalone.
-            </p>
-            <p>
-                Outro desafio prático foi a renderização de assets (ícones SVG), que resultava em erros <span class="tech-term">404 Not Found</span>. A investigação revelou um erro comum: a confusão entre caminhos de sistema de arquivos (ex: <span class="tech-term">src/assets/...</span>), que usamos no desenvolvimento, e caminhos de URL públicos (ex: <span class="tech-term">/assets/...</span>), que o navegador entende. A correção no atributo <span class="tech-term">src</span> das tags <span class="tech-term"> img</span> foi simples, mas fundamental para entender como o Angular CLI serve arquivos estáticos.
-            </p>
-        </div>
     </div>
 </section>
