@@ -1,5 +1,6 @@
 # Alpha Desk
 
+![Badge de Licença](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Badge do GitHub](https://img.shields.io/github/last-commit/Fortuna09/alpha-feedback-angular)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4956270e-6692-4363-9b6a-235fed090517/deploy-status)](https://app.netlify.com/projects/alpha-feedback/deploys)
 
