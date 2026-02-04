@@ -5,7 +5,5 @@
     "tecnologia": "Angular.js, Node.js, Chart.js, Mongoose, MongoDB, Swagger",
     "imagem": "/projeto1-foto.png",
     "gif": "/projeto1-gif.gif",
-    "linkRepo": "https://github.com/Fortuna09/alpha-feedback-angular",
-    "linkDemo": "https://alpha-feedback.netlify.app/",
     "tags": ["Angular", "TypeScript", "Node.js", "Dashboard", "Full-Stack"]
   }
