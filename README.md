@@ -7,7 +7,7 @@
 
 [![Aplicação Online](https://img.shields.io/badge/Ver%20Online-green?style=for-the-badge)](https://alpha-feedback.netlify.app/)
 
-![Prévia do Alpha Desk em ação](/PREVIEW.gif)
+![Prévia do Alpha Desk em ação](/pub.gif)
 
 ### Descrição
 Um sistema de feedback e análise de dados para empresas. Permite a coleta de avaliações de clientes e oferece um dashboard seguro para administradores visualizarem e analisarem os resultados em tempo real.
