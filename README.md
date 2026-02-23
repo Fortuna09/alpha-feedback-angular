@@ -92,3 +92,6 @@ npm start
 **Rafael Fortuna**
 
 - **LinkedIn:** [Meu perfil](https://www.linkedin.com/in/rafael-fortuna-990184264/)
+
+
+.
