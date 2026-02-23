@@ -4,6 +4,6 @@
     "desafio": "Construir uma arquitetura cliente-servidor robusta com validação de dados em duas camadas (front-end e back-end) e documentação completa da API com Swagger.",
     "tecnologia": "Angular.js, Node.js, Chart.js, Mongoose, MongoDB, Swagger",
     "imagem": "/pub.png",
-    "gif": "/PREVIEW.gif",
+    "gif": "/pub.gif",
     "tags": ["Angular", "TypeScript", "Node.js", "Dashboard", "Full-Stack"]
   }
