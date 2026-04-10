@@ -8,6 +8,195 @@
   padding: 20px;
 }
 
+// About Section
+.about-section {
+  padding: 100px 20px;
+  background-color: #ffffff;
+
+  .about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    text-align: left;
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  .about-text {
+    flex: 1;
+
+    h2 {
+      font-size: 2.8rem;
+      color: #1a4d2e;
+      margin-bottom: 25px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 1.15rem;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+  }
+
+  .about-image {
+    flex: 1;
+    
+    img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      transition: transform 0.5s ease;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+}
+
+// Impact Section
+.impact-section {
+  padding: 80px 20px;
+  background-color: #f4fbf5;
+  text-align: center;
+  
+  .impact-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    
+    h2 {
+      font-size: 2.5rem;
+      color: #1a4d2e;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    
+    > p {
+      font-size: 1.2rem;
+      color: #4a5d4e;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.stat-card {
+  background: white;
+  padding: 40px 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 144, 55, 0.1);
+  }
+
+  .icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+    color: #009037;
+    margin: 10px 0;
+    font-weight: 800;
+  }
+
+  p {
+    color: #667a6e;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+}
+
+// Specific Feedback CTA section
+.feedback-cta-section {
+  background: linear-gradient(135deg, #1b5e20, #009037);
+  padding: 100px 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 C77.6 0 100 22.4 100 50 C100 77.6 77.6 100 50 100 C22.4 100 0 77.6 0 50 C0 22.4 22.4 0 50 0 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+    opacity: 0.5;
+  }
+  
+  .cta-inner {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 1;
+
+    h2 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
+  }
+}
+
+.pulse-button {
+  padding: 18px 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #ffb300;
+  color: #1a4d2e;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 179, 0, 0.4);
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+
+  &:hover {
+    background-color: #ffca28;
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(255, 179, 0, 0.5);
+    animation: none;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 179, 0, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(255, 179, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 179, 0, 0);
+  }
+}
+
 .cta-button {
   padding: 15px 30px;
   font-size: 18px;
@@ -24,20 +213,50 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .modal-content {
+  position: relative;
   width: 100%;
-  max-width: 500px;
-  padding: 30px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  max-height: 80vh; 
+  max-width: 600px;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  max-height: 90vh; 
   overflow-y: auto; 
+  transform: translateY(20px);
+  animation: slideUp 0.3s ease-out forwards;
+  
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #a0aab2;
+    cursor: pointer;
+    transition: color 0.2s;
+    
+    &:hover {
+      color: #1a4d2e;
+    }
+  }
+}
+
+@keyframes slideUp {
+  to { transform: translateY(0); }
 }

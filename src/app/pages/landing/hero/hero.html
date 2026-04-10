@@ -1,5 +1,16 @@
 <section class="hero-container">
-  <h1>Envie um Feedback</h1>
-  <p>Gostaria de compartilhar sua experiência? Nos ajude a melhorar para melhor atendê-lo.</p>
-  <button class="cta-button" (click)="onFeedbackButtonClick()">Deixe sua Avaliação do Projeto</button>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="badge">Plantando o Futuro</div>
+    <h1 class="hero-title">Restaure a Natureza, Uma Árvore Por Vez</h1>
+    <p class="hero-description">Nossa missão é combater as mudanças climáticas restaurando as florestas do mundo. Ajude-nos nessa causa ecológica, plante uma semente, e nos dê seu feedback!</p>
+    <div class="hero-actions">
+      <button class="cta-button primary pulse" (click)="onFeedbackButtonClick()">
+        Envie seu Feedback
+      </button>
+      <a href="#sobre" class="cta-button secondary" style="text-decoration: none;">
+        Sobre Nós
+      </a>
+    </div>
+  </div>
 </section>

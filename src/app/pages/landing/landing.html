@@ -1,10 +1,56 @@
-<app-angular-section></app-angular-section>
-<app-tech-stack></app-tech-stack>
 <app-hero (feedbackClick)="openFeedbackForm()"></app-hero>
 
+<section id="sobre" class="about-section">
+  <div class="about-content">
+    <div class="about-text">
+      <h2>Transformando Feedback em Árvores 🌱</h2>
+      <p>Nascemos de uma ideia simples: utilizar as nossas interações digitais para causar um impacto real no nosso meio ambiente. A cada feedback recebido, plantamos uma muda ao redor do mundo de acordo com a meta da nossa comunidade.</p>
+      <p>Trabalhamos com organizações focadas na restauração ecológica, trazendo novas florestas nativas e ajudando a capturar carbono vital da nossa atmosfera. Nosso objetivo não é apenas coletar avaliações formidáveis, mas usá-las para deixar um planeta muito mais verde para as próximas gerações.</p>
+    </div>
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800" alt="Planta em crescimento">
+    </div>
+  </div>
+</section>
+
+<section class="impact-section">
+  <div class="impact-content">
+    <h2>Nosso Impacto no Mundo</h2>
+    <p>Juntos, já plantamos milhares de árvores e estamos restaurando ecossistemas inteiros.</p>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <i class="icon tree-icon">🌲</i>
+        <h3>50.000+</h3>
+        <p>Árvores Plantadas</p>
+      </div>
+      <div class="stat-card">
+        <i class="icon co2-icon">☁️</i>
+        <h3>10.000t</h3>
+        <p>CO2 Compensado</p>
+      </div>
+      <div class="stat-card">
+        <i class="icon community-icon">🤝</i>
+        <h3>5.000+</h3>
+        <p>Comunidades Apoiadas</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="feedback-cta-section">
+  <div class="cta-inner">
+    <h2>Sua voz nos ajuda a semear mais longe</h2>
+    <p>Acreditamos que o feedback é como a água para as nossas sementes: essencial para crescer e melhorar. Compartilhe sua experiência conosco!</p>
+    <button class="pulse-button" (click)="openFeedbackForm()">Deixar meu Feedback agora</button>
+  </div>
+</section>
+
+<app-angular-section></app-angular-section>
+<app-tech-stack></app-tech-stack>
 
 <div *ngIf="isFormVisible" class="modal-overlay" (click)="closeFeedbackForm()">
   <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="closeFeedbackForm()">×</button>
     <app-feedback-form></app-feedback-form>
   </div>
 </div>
